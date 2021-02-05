@@ -1,0 +1,4 @@
+[submodule "TestResources/Submodules/Hexos"]
+	path = TestResources/Submodules/Hexos
+	url = https://github.com/StaticSiteTools/Hexos
+	branch = master
