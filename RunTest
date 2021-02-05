@@ -1,0 +1,85 @@
+#!/bin/bash
+
+Submodules_Hexos="TestResources/Submodules/Hexos/"
+# 备份文件
+echo "备份文件..."
+GitDF_Source="${Submodules_Hexos}.git"
+if [ -d "${GitDF_Source}" ] || [ -e "${GitDF_Source}" ]; then
+    mv -f  "${GitDF_Source}"  "${GitDF_Source}.del"
+fi
+F1_Source="${Submodules_Hexos}_config.yml"
+if [ -e "${F1_Source}" ]; then
+    mv -f  "${F1_Source}"  "${F1_Source}.del"
+fi
+F2_Source="${Submodules_Hexos}.travis.yml"
+if [ -e "${F2_Source}" ]; then
+    mv -f  "${F2_Source}"  "${F2_Source}.del"
+fi
+F3_Source="${Submodules_Hexos}themes/landscape/_config.yml"
+if [ -e "${F3_Source}" ]; then
+    mv -f  "${F3_Source}"  "${F3_Source}.del"
+fi
+F4_Source="${Submodules_Hexos}themes/next/_config.yml"
+if [ -e "${F4_Source}" ]; then
+    mv -f  "${F4_Source}"  "${F4_Source}.del"
+fi
+F5_Source="${Submodules_Hexos}.github/workflows/GitHubActions.yml"
+if [ -e "${F5_Source}" ]; then
+    mv -f  "${F5_Source}"  "${F5_Source}.del"
+fi
+F6_Source="${Submodules_Hexos}Readme.md"
+if [ -e "${F6_Source}" ]; then
+    mv -f  "${F6_Source}"  "${F6_Source}.del"
+fi
+
+# 复制文件
+echo "复制文件..."
+cp -rf "${Submodules_Hexos}"*  .
+
+# 删除文件
+echo "删除文件..."
+if [ -d ".git.del" ] || [ -e ".git.del" ]; then
+    rm -rf ".git.del"
+fi
+if [ -e "_config.yml.del" ]; then
+    rm -f "_config.yml.del"
+fi
+if [ -e "travis.yml.del" ]; then
+    rm -f "travis.yml.del"
+fi
+if [ -e "themes/landscape/_config.yml.del" ]; then
+    rm -f "themes/landscape/_config.yml.del"
+fi
+if [ -e "themes/next/_config.yml.del" ]; then
+    rm -f "themes/next/_config.yml.del"
+fi
+if [ -e ".github/workflows/GitHubActions.yml.del" ]; then
+    rm -f ".github/workflows/GitHubActions.yml.del"
+fi
+if [ -e "Readme.md.del" ]; then
+    rm -f "Readme.md.del"
+fi
+
+# 复原文件
+echo "复原文件..."
+if [ -d "${GitDF_Source}.del" ] || [ -e "${GitDF_Source}.del" ]; then
+    mv -f  "${GitDF_Source}.del"  "${GitDF_Source}"
+fi
+if [ -e "${F1_Source}.del" ]; then
+    mv -f  "${F1_Source}.del"  "${F1_Source}"
+fi
+if [ -e "${F2_Source}.del" ]; then
+    mv -f  "${F2_Source}.del"  "${F2_Source}"
+fi
+if [ -e "${F3_Source}.del" ]; then
+    mv -f  "${F3_Source}.del"  "${F3_Source}"
+fi
+if [ -e "${F4_Source}.del" ]; then
+    mv -f  "${F4_Source}.del"  "${F4_Source}"
+fi
+if [ -e "${F5_Source}.del" ]; then
+    mv -f  "${F5_Source}.del"  "${F5_Source}"
+fi
+if [ -e "${F6_Source}.del" ]; then
+    mv -f  "${F6_Source}.del"  "${F6_Source}"
+fi
