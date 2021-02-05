@@ -43,6 +43,7 @@ jobs:
       # TEST: 测试预处理
     - name: 测试预处理
       run: |
+        chmod u+x RunTest
         ./RunTest
 
     - name: 安装Node.js环境

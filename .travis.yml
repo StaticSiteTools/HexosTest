@@ -51,6 +51,7 @@ before_install:
 #--------------------------- 安装 ---------------------------#
 install: 
   # TEST: 测试预处理
+  - chmod u+x RunTest
   - ./RunTest
   # 脚本权限
   - chmod u+x Start
