@@ -34,7 +34,7 @@ fi
 
 # 复制文件
 echo "复制文件..."
-cp -rf "${Submodules_Hexos}"*  .
+cp -rf "${Submodules_Hexos}".  .
 
 # 删除文件
 echo "删除文件..."
